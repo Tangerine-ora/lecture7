@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'data/book_repository.dart';
 import 'models/list_page_args.dart';
+import 'pages/about_page.dart';
 import 'pages/detail_page.dart';
+import 'pages/home_page.dart';
 import 'pages/list_page.dart';
 
 Future<void> main() async {
@@ -26,7 +28,7 @@ class BookApp extends StatelessWidget {
       initialRoute: '/',
       // 命名路由表：全应用跳转统一走 Navigator.pushNamed。
       routes: {
-        '/': (_) => const ListPage(),
+        '/': (_) => const HomePage(),
         '/list': (context) {
           final args = ModalRoute.of(context)!.settings.arguments;
           if (args is ListPageArgs) {
@@ -38,6 +40,7 @@ class BookApp extends StatelessWidget {
           return const ListPage();
         },
         '/detail': (_) => const DetailPage(),
+        '/about': (_) => const AboutPage(),
       },
     );
   }

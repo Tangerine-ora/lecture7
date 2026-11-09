@@ -83,6 +83,7 @@ class _ListPageState extends State<ListPage> {
             subtitle: Text('${book.author} · ${book.category}'),
             trailing: Text('${book.borrowCount}次'),
             onTap: () => _openDetail(book),
+            onLongPress: () => _showQuickFilter(book),
           );
         },
       ),
@@ -101,6 +102,46 @@ class _ListPageState extends State<ListPage> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text('详情页回传：$result')),
     );
+  }
+
+  /// 长按弹层选择筛选条件，选中后把结果 pop 回首页（回程传值验证）。
+  Future<void> _showQuickFilter(Book book) async {
+    final choice = await showModalBottomSheet<String>(
+      context: context,
+      builder: (sheetContext) {
+        return SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                title: Text('《${book.title}》快捷筛选'),
+                subtitle: const Text('选择后返回首页并显示结果'),
+              ),
+              const Divider(height: 1),
+              ListTile(
+                leading: const Icon(Icons.filter_alt),
+                title: Text(
+                  '仅看高借阅量（≥${BookRepositoryThreshold.popular} 次）',
+                ),
+                onTap: () => Navigator.pop(
+                  sheetContext,
+                  '仅看高借阅量（≥${BookRepositoryThreshold.popular} 次）',
+                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.close),
+                title: const Text('取消'),
+                onTap: () => Navigator.pop(sheetContext),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+    if (!mounted || choice == null) {
+      return;
+    }
+    Navigator.pop(context, choice);
   }
 
   Widget _buildLoadMore(BuildContext context) {

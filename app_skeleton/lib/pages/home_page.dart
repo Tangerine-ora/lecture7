@@ -1,0 +1,115 @@
+import 'package:flutter/material.dart';
+
+import '../data/book_repository.dart';
+import '../models/list_page_args.dart';
+
+/// 首页：GridView 分类入口；从列表页返回的筛选结果展示在 AppBar 副标题。
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  String? _returnedFilter;
+  bool _onlyPopular = false;
+
+  Future<void> _openList(String? category) async {
+    final result = await Navigator.pushNamed(
+      context,
+      '/list',
+      arguments: ListPageArgs(category: category, onlyPopular: _onlyPopular),
+    );
+    if (!mounted || result == null) {
+      return;
+    }
+    setState(() {
+      _returnedFilter = '回传：$result';
+      _onlyPopular = true;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final repo = BookRepository.instance;
+    final categories = <String?>[null, ...repo.categories];
+    final theme = Theme.of(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('书架首页'),
+            Text(
+              _returnedFilter ?? '选择分类进入书单',
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          IconButton(
+            tooltip: '关于本页',
+            onPressed: () => Navigator.pushNamed(context, '/about'),
+            icon: const Icon(Icons.info_outline),
+          ),
+        ],
+      ),
+      body: GridView.builder(
+        padding: const EdgeInsets.all(16),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 12,
+          crossAxisSpacing: 12,
+          childAspectRatio: 1.5,
+        ),
+        itemCount: categories.length,
+        itemBuilder: (context, index) {
+          final category = categories[index];
+          final label = category ?? '全部书目';
+          final count = repo.count(category: category);
+          final icon = _iconOf(category);
+          return Card(
+            clipBehavior: Clip.antiAlias,
+            child: InkWell(
+              onTap: () => _openList(category),
+              child: Padding(
+                padding: const EdgeInsets.all(14),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Icon(icon, size: 30, color: theme.colorScheme.primary),
+                    const Spacer(),
+                    Text(label, style: theme.textTheme.titleMedium),
+                    const SizedBox(height: 2),
+                    Text(
+                      '$count 本',
+                      style: theme.textTheme.bodySmall,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  IconData _iconOf(String? category) {
+    switch (category) {
+      case '计算机':
+        return Icons.computer;
+      case '文学':
+        return Icons.auto_stories;
+      case '历史':
+        return Icons.account_balance;
+      case '科普':
+        return Icons.science;
+      default:
+        return Icons.apps;
+    }
+  }
+}
