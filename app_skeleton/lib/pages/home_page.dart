@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/book_repository.dart';
 import '../models/list_page_args.dart';
+import '../widgets/category_card.dart';
 
 /// 首页：GridView 分类入口；从列表页返回的筛选结果展示在 AppBar 副标题。
 class HomePage extends StatefulWidget {
@@ -69,29 +70,11 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (context, index) {
           final category = categories[index];
           final label = category ?? '全部书目';
-          final count = repo.count(category: category);
-          final icon = _iconOf(category);
-          return Card(
-            clipBehavior: Clip.antiAlias,
-            child: InkWell(
-              onTap: () => _openList(category),
-              child: Padding(
-                padding: const EdgeInsets.all(14),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(icon, size: 30, color: theme.colorScheme.primary),
-                    const Spacer(),
-                    Text(label, style: theme.textTheme.titleMedium),
-                    const SizedBox(height: 2),
-                    Text(
-                      '$count 本',
-                      style: theme.textTheme.bodySmall,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+          return CategoryCard(
+            label: label,
+            count: repo.count(category: category),
+            icon: _iconOf(category),
+            onTap: () => _openList(category),
           );
         },
       ),

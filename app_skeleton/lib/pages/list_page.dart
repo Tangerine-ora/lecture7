@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/book_repository.dart';
 import '../models/book.dart';
+import '../widgets/book_tile.dart';
 
 /// 列表页：ListView.builder 懒构建，配合“加载更多”模拟分页取数。
 class ListPage extends StatefulWidget {
@@ -77,11 +78,8 @@ class _ListPageState extends State<ListPage> {
             return _buildLoadMore(context);
           }
           final book = _items[index];
-          return ListTile(
-            leading: CircleAvatar(child: Text('${book.id}')),
-            title: Text(book.title),
-            subtitle: Text('${book.author} · ${book.category}'),
-            trailing: Text('${book.borrowCount}次'),
+          return BookTile(
+            book: book,
             onTap: () => _openDetail(book),
             onLongPress: () => _showQuickFilter(book),
           );
