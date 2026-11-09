@@ -82,9 +82,24 @@ class _ListPageState extends State<ListPage> {
             title: Text(book.title),
             subtitle: Text('${book.author} · ${book.category}'),
             trailing: Text('${book.borrowCount}次'),
+            onTap: () => _openDetail(book),
           );
         },
       ),
+    );
+  }
+
+  Future<void> _openDetail(Book book) async {
+    final result = await Navigator.pushNamed(
+      context,
+      '/detail',
+      arguments: book,
+    );
+    if (!mounted || result == null) {
+      return;
+    }
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('详情页回传：$result')),
     );
   }
 

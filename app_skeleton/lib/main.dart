@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'data/book_repository.dart';
+import 'models/list_page_args.dart';
+import 'pages/detail_page.dart';
 import 'pages/list_page.dart';
 
 Future<void> main() async {
@@ -21,7 +23,22 @@ class BookApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
         useMaterial3: true,
       ),
-      home: const ListPage(),
+      initialRoute: '/',
+      // 命名路由表：全应用跳转统一走 Navigator.pushNamed。
+      routes: {
+        '/': (_) => const ListPage(),
+        '/list': (context) {
+          final args = ModalRoute.of(context)!.settings.arguments;
+          if (args is ListPageArgs) {
+            return ListPage(
+              category: args.category,
+              onlyPopular: args.onlyPopular,
+            );
+          }
+          return const ListPage();
+        },
+        '/detail': (_) => const DetailPage(),
+      },
     );
   }
 }
