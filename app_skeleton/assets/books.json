@@ -1,0 +1,482 @@
+[
+  {
+    "id": 1,
+    "title": "Flutter实战",
+    "author": "奇舞团",
+    "category": "计算机",
+    "borrowCount": 42,
+    "summary": "《Flutter实战》是计算机类的代表读物，作者奇舞团，馆藏借阅热度 42 次。"
+  },
+  {
+    "id": 2,
+    "title": "Dart语言导论",
+    "author": "张明",
+    "category": "计算机",
+    "borrowCount": 31,
+    "summary": "《Dart语言导论》是计算机类的代表读物，作者张明，馆藏借阅热度 31 次。"
+  },
+  {
+    "id": 3,
+    "title": "移动应用架构",
+    "author": "李强",
+    "category": "计算机",
+    "borrowCount": 20,
+    "summary": "《移动应用架构》是计算机类的代表读物，作者李强，馆藏借阅热度 20 次。"
+  },
+  {
+    "id": 4,
+    "title": "算法图解",
+    "author": "巴尔加瓦",
+    "category": "计算机",
+    "borrowCount": 9,
+    "summary": "《算法图解》是计算机类的代表读物，作者巴尔加瓦，馆藏借阅热度 9 次。"
+  },
+  {
+    "id": 5,
+    "title": "深入理解计算机系统",
+    "author": "布莱恩特",
+    "category": "计算机",
+    "borrowCount": 52,
+    "summary": "《深入理解计算机系统》是计算机类的代表读物，作者布莱恩特，馆藏借阅热度 52 次。"
+  },
+  {
+    "id": 6,
+    "title": "数据结构与算法分析",
+    "author": "韦斯",
+    "category": "计算机",
+    "borrowCount": 41,
+    "summary": "《数据结构与算法分析》是计算机类的代表读物，作者韦斯，馆藏借阅热度 41 次。"
+  },
+  {
+    "id": 7,
+    "title": "重构：改善既有代码",
+    "author": "福勒",
+    "category": "计算机",
+    "borrowCount": 30,
+    "summary": "《重构：改善既有代码》是计算机类的代表读物，作者福勒，馆藏借阅热度 30 次。"
+  },
+  {
+    "id": 8,
+    "title": "代码整洁之道",
+    "author": "马丁",
+    "category": "计算机",
+    "borrowCount": 19,
+    "summary": "《代码整洁之道》是计算机类的代表读物，作者马丁，馆藏借阅热度 19 次。"
+  },
+  {
+    "id": 9,
+    "title": "计算机网络自顶向下",
+    "author": "罗斯",
+    "category": "计算机",
+    "borrowCount": 8,
+    "summary": "《计算机网络自顶向下》是计算机类的代表读物，作者罗斯，馆藏借阅热度 8 次。"
+  },
+  {
+    "id": 10,
+    "title": "操作系统导论",
+    "author": "阿尔帕西",
+    "category": "计算机",
+    "borrowCount": 51,
+    "summary": "《操作系统导论》是计算机类的代表读物，作者阿尔帕西，馆藏借阅热度 51 次。"
+  },
+  {
+    "id": 11,
+    "title": "数据库系统概念",
+    "author": "西尔伯沙茨",
+    "category": "计算机",
+    "borrowCount": 40,
+    "summary": "《数据库系统概念》是计算机类的代表读物，作者西尔伯沙茨，馆藏借阅热度 40 次。"
+  },
+  {
+    "id": 12,
+    "title": "设计模式",
+    "author": "戈马",
+    "category": "计算机",
+    "borrowCount": 29,
+    "summary": "《设计模式》是计算机类的代表读物，作者戈马，馆藏借阅热度 29 次。"
+  },
+  {
+    "id": 13,
+    "title": "编译原理",
+    "author": "阿霍",
+    "category": "计算机",
+    "borrowCount": 18,
+    "summary": "《编译原理》是计算机类的代表读物，作者阿霍，馆藏借阅热度 18 次。"
+  },
+  {
+    "id": 14,
+    "title": "Python编程从入门到实践",
+    "author": "马瑟斯",
+    "category": "计算机",
+    "borrowCount": 61,
+    "summary": "《Python编程从入门到实践》是计算机类的代表读物，作者马瑟斯，馆藏借阅热度 61 次。"
+  },
+  {
+    "id": 15,
+    "title": "软件工程实践",
+    "author": "普雷斯曼",
+    "category": "计算机",
+    "borrowCount": 50,
+    "summary": "《软件工程实践》是计算机类的代表读物，作者普雷斯曼，馆藏借阅热度 50 次。"
+  },
+  {
+    "id": 16,
+    "title": "活着",
+    "author": "余华",
+    "category": "文学",
+    "borrowCount": 24,
+    "summary": "《活着》是文学类的代表读物，作者余华，馆藏借阅热度 24 次。"
+  },
+  {
+    "id": 17,
+    "title": "百年孤独",
+    "author": "马尔克斯",
+    "category": "文学",
+    "borrowCount": 13,
+    "summary": "《百年孤独》是文学类的代表读物，作者马尔克斯，馆藏借阅热度 13 次。"
+  },
+  {
+    "id": 18,
+    "title": "围城",
+    "author": "钱钟书",
+    "category": "文学",
+    "borrowCount": 2,
+    "summary": "《围城》是文学类的代表读物，作者钱钟书，馆藏借阅热度 2 次。"
+  },
+  {
+    "id": 19,
+    "title": "平凡的世界",
+    "author": "路遥",
+    "category": "文学",
+    "borrowCount": 45,
+    "summary": "《平凡的世界》是文学类的代表读物，作者路遥，馆藏借阅热度 45 次。"
+  },
+  {
+    "id": 20,
+    "title": "红楼梦",
+    "author": "曹雪芹",
+    "category": "文学",
+    "borrowCount": 34,
+    "summary": "《红楼梦》是文学类的代表读物，作者曹雪芹，馆藏借阅热度 34 次。"
+  },
+  {
+    "id": 21,
+    "title": "三体",
+    "author": "刘慈欣",
+    "category": "文学",
+    "borrowCount": 23,
+    "summary": "《三体》是文学类的代表读物，作者刘慈欣，馆藏借阅热度 23 次。"
+  },
+  {
+    "id": 22,
+    "title": "白夜行",
+    "author": "东野圭吾",
+    "category": "文学",
+    "borrowCount": 12,
+    "summary": "《白夜行》是文学类的代表读物，作者东野圭吾，馆藏借阅热度 12 次。"
+  },
+  {
+    "id": 23,
+    "title": "小王子",
+    "author": "圣埃克苏佩里",
+    "category": "文学",
+    "borrowCount": 55,
+    "summary": "《小王子》是文学类的代表读物，作者圣埃克苏佩里，馆藏借阅热度 55 次。"
+  },
+  {
+    "id": 24,
+    "title": "老人与海",
+    "author": "海明威",
+    "category": "文学",
+    "borrowCount": 44,
+    "summary": "《老人与海》是文学类的代表读物，作者海明威，馆藏借阅热度 44 次。"
+  },
+  {
+    "id": 25,
+    "title": "呐喊",
+    "author": "鲁迅",
+    "category": "文学",
+    "borrowCount": 33,
+    "summary": "《呐喊》是文学类的代表读物，作者鲁迅，馆藏借阅热度 33 次。"
+  },
+  {
+    "id": 26,
+    "title": "边城",
+    "author": "沈从文",
+    "category": "文学",
+    "borrowCount": 22,
+    "summary": "《边城》是文学类的代表读物，作者沈从文，馆藏借阅热度 22 次。"
+  },
+  {
+    "id": 27,
+    "title": "骆驼祥子",
+    "author": "老舍",
+    "category": "文学",
+    "borrowCount": 11,
+    "summary": "《骆驼祥子》是文学类的代表读物，作者老舍，馆藏借阅热度 11 次。"
+  },
+  {
+    "id": 28,
+    "title": "尘埃落定",
+    "author": "阿来",
+    "category": "文学",
+    "borrowCount": 54,
+    "summary": "《尘埃落定》是文学类的代表读物，作者阿来，馆藏借阅热度 54 次。"
+  },
+  {
+    "id": 29,
+    "title": "追风筝的人",
+    "author": "胡赛尼",
+    "category": "文学",
+    "borrowCount": 43,
+    "summary": "《追风筝的人》是文学类的代表读物，作者胡赛尼，馆藏借阅热度 43 次。"
+  },
+  {
+    "id": 30,
+    "title": "解忧杂货店",
+    "author": "东野圭吾",
+    "category": "文学",
+    "borrowCount": 32,
+    "summary": "《解忧杂货店》是文学类的代表读物，作者东野圭吾，馆藏借阅热度 32 次。"
+  },
+  {
+    "id": 31,
+    "title": "史记",
+    "author": "司马迁",
+    "category": "历史",
+    "borrowCount": 6,
+    "summary": "《史记》是历史类的代表读物，作者司马迁，馆藏借阅热度 6 次。"
+  },
+  {
+    "id": 32,
+    "title": "万历十五年",
+    "author": "黄仁宇",
+    "category": "历史",
+    "borrowCount": 49,
+    "summary": "《万历十五年》是历史类的代表读物，作者黄仁宇，馆藏借阅热度 49 次。"
+  },
+  {
+    "id": 33,
+    "title": "中国通史",
+    "author": "吕思勉",
+    "category": "历史",
+    "borrowCount": 38,
+    "summary": "《中国通史》是历史类的代表读物，作者吕思勉，馆藏借阅热度 38 次。"
+  },
+  {
+    "id": 34,
+    "title": "全球通史",
+    "author": "斯塔夫里阿诺斯",
+    "category": "历史",
+    "borrowCount": 27,
+    "summary": "《全球通史》是历史类的代表读物，作者斯塔夫里阿诺斯，馆藏借阅热度 27 次。"
+  },
+  {
+    "id": 35,
+    "title": "枪炮、病菌与钢铁",
+    "author": "戴蒙德",
+    "category": "历史",
+    "borrowCount": 16,
+    "summary": "《枪炮、病菌与钢铁》是历史类的代表读物，作者戴蒙德，馆藏借阅热度 16 次。"
+  },
+  {
+    "id": 36,
+    "title": "人类简史",
+    "author": "赫拉利",
+    "category": "历史",
+    "borrowCount": 5,
+    "summary": "《人类简史》是历史类的代表读物，作者赫拉利，馆藏借阅热度 5 次。"
+  },
+  {
+    "id": 37,
+    "title": "明朝那些事儿",
+    "author": "当年明月",
+    "category": "历史",
+    "borrowCount": 48,
+    "summary": "《明朝那些事儿》是历史类的代表读物，作者当年明月，馆藏借阅热度 48 次。"
+  },
+  {
+    "id": 38,
+    "title": "罗马帝国衰亡史",
+    "author": "吉本",
+    "category": "历史",
+    "borrowCount": 37,
+    "summary": "《罗马帝国衰亡史》是历史类的代表读物，作者吉本，馆藏借阅热度 37 次。"
+  },
+  {
+    "id": 39,
+    "title": "丝绸之路",
+    "author": "弗兰科潘",
+    "category": "历史",
+    "borrowCount": 26,
+    "summary": "《丝绸之路》是历史类的代表读物，作者弗兰科潘，馆藏借阅热度 26 次。"
+  },
+  {
+    "id": 40,
+    "title": "中国历代政治得失",
+    "author": "钱穆",
+    "category": "历史",
+    "borrowCount": 15,
+    "summary": "《中国历代政治得失》是历史类的代表读物，作者钱穆，馆藏借阅热度 15 次。"
+  },
+  {
+    "id": 41,
+    "title": "战国策",
+    "author": "刘向",
+    "category": "历史",
+    "borrowCount": 58,
+    "summary": "《战国策》是历史类的代表读物，作者刘向，馆藏借阅热度 58 次。"
+  },
+  {
+    "id": 42,
+    "title": "唐史十二讲",
+    "author": "陈寅恪",
+    "category": "历史",
+    "borrowCount": 47,
+    "summary": "《唐史十二讲》是历史类的代表读物，作者陈寅恪，馆藏借阅热度 47 次。"
+  },
+  {
+    "id": 43,
+    "title": "清代宫廷史",
+    "author": "郑天挺",
+    "category": "历史",
+    "borrowCount": 36,
+    "summary": "《清代宫廷史》是历史类的代表读物，作者郑天挺，馆藏借阅热度 36 次。"
+  },
+  {
+    "id": 44,
+    "title": "近代中国社会的新陈代谢",
+    "author": "陈旭麓",
+    "category": "历史",
+    "borrowCount": 25,
+    "summary": "《近代中国社会的新陈代谢》是历史类的代表读物，作者陈旭麓，馆藏借阅热度 25 次。"
+  },
+  {
+    "id": 45,
+    "title": "世界文明史",
+    "author": "杜兰特",
+    "category": "历史",
+    "borrowCount": 14,
+    "summary": "《世界文明史》是历史类的代表读物，作者杜兰特，馆藏借阅热度 14 次。"
+  },
+  {
+    "id": 46,
+    "title": "时间简史",
+    "author": "霍金",
+    "category": "科普",
+    "borrowCount": 42,
+    "summary": "《时间简史》是科普类的代表读物，作者霍金，馆藏借阅热度 42 次。"
+  },
+  {
+    "id": 47,
+    "title": "物种起源",
+    "author": "达尔文",
+    "category": "科普",
+    "borrowCount": 31,
+    "summary": "《物种起源》是科普类的代表读物，作者达尔文，馆藏借阅热度 31 次。"
+  },
+  {
+    "id": 48,
+    "title": "自私的基因",
+    "author": "道金斯",
+    "category": "科普",
+    "borrowCount": 20,
+    "summary": "《自私的基因》是科普类的代表读物，作者道金斯，馆藏借阅热度 20 次。"
+  },
+  {
+    "id": 49,
+    "title": "万物简史",
+    "author": "布莱森",
+    "category": "科普",
+    "borrowCount": 9,
+    "summary": "《万物简史》是科普类的代表读物，作者布莱森，馆藏借阅热度 9 次。"
+  },
+  {
+    "id": 50,
+    "title": "数学之美",
+    "author": "吴军",
+    "category": "科普",
+    "borrowCount": 52,
+    "summary": "《数学之美》是科普类的代表读物，作者吴军，馆藏借阅热度 52 次。"
+  },
+  {
+    "id": 51,
+    "title": "上帝掷骰子吗",
+    "author": "曹天元",
+    "category": "科普",
+    "borrowCount": 41,
+    "summary": "《上帝掷骰子吗》是科普类的代表读物，作者曹天元，馆藏借阅热度 41 次。"
+  },
+  {
+    "id": 52,
+    "title": "宇宙的琴弦",
+    "author": "格林",
+    "category": "科普",
+    "borrowCount": 30,
+    "summary": "《宇宙的琴弦》是科普类的代表读物，作者格林，馆藏借阅热度 30 次。"
+  },
+  {
+    "id": 53,
+    "title": "寂静的春天",
+    "author": "卡森",
+    "category": "科普",
+    "borrowCount": 19,
+    "summary": "《寂静的春天》是科普类的代表读物，作者卡森，馆藏借阅热度 19 次。"
+  },
+  {
+    "id": 54,
+    "title": "生命是什么",
+    "author": "薛定谔",
+    "category": "科普",
+    "borrowCount": 8,
+    "summary": "《生命是什么》是科普类的代表读物，作者薛定谔，馆藏借阅热度 8 次。"
+  },
+  {
+    "id": 55,
+    "title": "从一到无穷大",
+    "author": "伽莫夫",
+    "category": "科普",
+    "borrowCount": 51,
+    "summary": "《从一到无穷大》是科普类的代表读物，作者伽莫夫，馆藏借阅热度 51 次。"
+  },
+  {
+    "id": 56,
+    "title": "物理世界奇遇记",
+    "author": "伽莫夫",
+    "category": "科普",
+    "borrowCount": 40,
+    "summary": "《物理世界奇遇记》是科普类的代表读物，作者伽莫夫，馆藏借阅热度 40 次。"
+  },
+  {
+    "id": 57,
+    "title": "化学元素之旅",
+    "author": "凯尔",
+    "category": "科普",
+    "borrowCount": 29,
+    "summary": "《化学元素之旅》是科普类的代表读物，作者凯尔，馆藏借阅热度 29 次。"
+  },
+  {
+    "id": 58,
+    "title": "人体简史",
+    "author": "布莱森",
+    "category": "科普",
+    "borrowCount": 18,
+    "summary": "《人体简史》是科普类的代表读物，作者布莱森，馆藏借阅热度 18 次。"
+  },
+  {
+    "id": 59,
+    "title": "人工智能简史",
+    "author": "张江",
+    "category": "科普",
+    "borrowCount": 61,
+    "summary": "《人工智能简史》是科普类的代表读物，作者张江，馆藏借阅热度 61 次。"
+  },
+  {
+    "id": 60,
+    "title": "科学革命的结构",
+    "author": "库恩",
+    "category": "科普",
+    "borrowCount": 50,
+    "summary": "《科学革命的结构》是科普类的代表读物，作者库恩，馆藏借阅热度 50 次。"
+  }
+]
