@@ -58,23 +58,30 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: GridView.builder(
-        padding: const EdgeInsets.all(16),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 12,
-          crossAxisSpacing: 12,
-          childAspectRatio: 1.5,
-        ),
-        itemCount: categories.length,
-        itemBuilder: (context, index) {
-          final category = categories[index];
-          final label = category ?? '全部书目';
-          return CategoryCard(
-            label: label,
-            count: repo.count(category: category),
-            icon: _iconOf(category),
-            onTap: () => _openList(category),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          // 宽屏下按可用宽度增加列数，避免卡片被拉得过高。
+          final columns =
+              (constraints.maxWidth / 300).floor().clamp(2, 5).toInt();
+          return GridView.builder(
+            padding: const EdgeInsets.all(16),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: columns,
+              mainAxisSpacing: 12,
+              crossAxisSpacing: 12,
+              childAspectRatio: 1.5,
+            ),
+            itemCount: categories.length,
+            itemBuilder: (context, index) {
+              final category = categories[index];
+              final label = category ?? '全部书目';
+              return CategoryCard(
+                label: label,
+                count: repo.count(category: category),
+                icon: _iconOf(category),
+                onTap: () => _openList(category),
+              );
+            },
           );
         },
       ),
