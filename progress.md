@@ -26,7 +26,7 @@ SDK 与运行目标：Flutter 3.47.4 stable / Dart 3.13.3；运行目标为 Chro
 
 1. 环境自查：flutter --version 确认 3.47.4 stable，dart 3.13.3；git 2.55；
 2. flutter create --project-name app_skeleton --platforms=web,windows 生成工程，清理默认计数器模板；
-3. 数据层：新建 lib/models/book.dart（id/title/author/category/borrowCount/summary，fromJson 工厂）与 assets/books.json（4 个分类共 60 条书目），pubspec 声明 assets → 提交1：`4af52ca feat: book model & bundled book data`；
+3. 数据层：新建 lib/models/book.dart（字段 id、title、author、category、borrowCount、summary，含 fromJson 工厂）与 assets/books.json（4 个分类共 60 条书目），pubspec 声明 assets → 提交1：`4af52ca feat: book model & bundled book data`；
 4. 列表页：ListView.builder 懒构建 + offset/limit 分页，底部“加载更多”每次追加 20 条，AppBar 显示“已加载 x/总数” → 提交2：`8801d67 feat: list page with builder and load-more paging`；
 5. 路由与传参：MaterialApp 注册命名路由表，列表项 pushNamed 携带 Book，详情页用 ModalRoute.of(context)!.settings.arguments as Book 接收，底部按钮 pop 带字符串 → 提交3：`470462b feat: named routes & typed arguments`；
 6. 网格首页：GridView.builder 分类入口（含“全部书目”），按 ListPageArgs 过滤；列表页长按弹层选择“仅看高借阅量”，结果 pop 回首页显示在 AppBar 副标题 → 提交4：`01e9827 feat: grid home & pop-with-value filter`；
