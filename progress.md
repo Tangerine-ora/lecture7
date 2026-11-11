@@ -1,4 +1,4 @@
-# 进度报告7（第9周·可滚动组件与多页面结构）
+﻿# 进度报告7（第9周·可滚动组件与多页面结构）
 
 > 使用方式：在模板上作答，作答完成后将全文复制到雨课堂答题区（图片无法粘贴时在雨课堂编辑器中手工重新上传），并将同一内容存入自己仓库 lecture7/progress.md。
 
@@ -20,7 +20,7 @@
 
 SDK 与运行目标：Flutter 3.47.4 stable / Dart 3.13.3；运行目标为 Chrome（flutter run -d chrome），静态检查使用 dart analyze（工程位于中文路径，flutter analyze 在本机有已知崩溃问题，沿用第 5 周的规避方案）。
 
-构建与验证工具：flutter build web --release 产物由本地 http.server 提供，用 Playwright 驱动 Chrome（1440×900 桌面窗口）逐页截图取证；flutter test 运行 3 个 Widget 流程测试。
+构建与验证工具：flutter build web --release 产物由本地 http.server 提供；用 Playwright 驱动最大化的 Chrome 窗口操作页面，再用 ImageGrab 截取整个桌面（含浏览器窗口与底部任务栏）；flutter test 运行 3 个 Widget 流程测试。
 
 ## 三、过程记录
 
@@ -134,7 +134,7 @@ AI 生成说明：AI 提示“pop 的值要有人接，await 不能漏”；本�
 
 问题2：验证回传值时进入“全部书目”，AppBar 显示“已加载 20/43”，而全部数据是 60 条，一度怀疑分页取数少算。定位过程：把 `_total` 的来源 `BookRepository.count(category, onlyPopular)` 与控制台数据对照，发现长按选择后首页把 `_onlyPopular` 置真，之后再进列表就只统计借阅量≥20 的 43 本，20/43 是正确结果。结论：这不是 bug，而是回传值确实改变了后续页面的入参，属于预期行为；保留该实现并作为“回传生效”的证据（截图6）。
 
-问题3：用 Playwright 在 1440×900 的全屏窗口中自动点击“加载更多”时无反应，计数停在 20/60。定位过程：先怀疑按钮被禁用，但 hasMore 为 true；再对照截图量出按钮实际中心在 y≈838，而脚本点击的是 y≈825，落在按钮上边缘之外，属于命中测试偏移。解决方案：修正点击坐标到 838，重跑后计数变为 40/60（截图10）。结论：自动化验证也要以“命中区域”而不是“看起来的位置”为准。
+问题3：用 Playwright 在最大化窗口中自动点击“加载更多”时无反应，计数停在 20/60。定位过程：先怀疑按钮被禁用，但 hasMore 为 true；再对比页面截图发现脚本用的固定坐标 y≈825 落在按钮上方的说明文字上，按钮实际中心在 y≈858。解决方案：改为先截取页面、按主色扫描按钮所在行再点击，重跑后计数变为 40/60（截图10）。结论：自动化验证要以“命中区域”而不是“凭经验写死的坐标”为准。
 
 ## 七、AI 使用记录
 
@@ -150,25 +150,25 @@ AI 生成说明：AI 提示“pop 的值要有人接，await 不能漏”；本�
 
 ## 八、证据截图
 
-![截图1 首页 GridView 分类入口，AppBar 副标题提示选择分类](evidence/01_home.png)
+![截图1 首页 GridView 分类入口，AppBar 副标题提示选择分类](evidence/01_home.jpg)
 
-![截图2 计算机书单：ListView.builder 渲染 15 条，AppBar 显示已加载 15/15](evidence/02_list.png)
+![截图2 计算机书单：ListView.builder 渲染 15 条，AppBar 显示已加载 15/15](evidence/02_list.jpg)
 
-![截图3 详情页：强类型 Book 参数完整显示](evidence/03_detail.png)
+![截图3 详情页：强类型 Book 参数完整显示](evidence/03_detail.jpg)
 
-![截图4 详情页返回后列表底部 SnackBar 显示回传值](evidence/04_detail_pop_snackbar.png)
+![截图4 详情页返回后列表底部 SnackBar 显示回传值](evidence/04_detail_pop_snackbar.jpg)
 
-![截图5 列表项长按弹层：仅看高借阅量 / 取消](evidence/05_longpress_sheet.png)
+![截图5 列表项长按弹层：仅看高借阅量 / 取消](evidence/05_longpress_sheet.jpg)
 
-![截图6 选择结果回传首页，AppBar 副标题显示“回传：仅看高借阅量（≥20 次）”](evidence/06_home_returned_value.png)
+![截图6 选择结果回传首页，AppBar 副标题显示“回传：仅看高借阅量（≥20 次）”](evidence/06_home_returned_value.jpg)
 
-![截图7 全部书目第 1 页：已加载 20/60](evidence/07_list_all_page1.png)
+![截图7 全部书目第 1 页：已加载 20/60](evidence/07_list_all_page1.jpg)
 
-![截图8 滚动到底部：加载更多按钮与懒构建说明](evidence/08_list_bottom.png)
+![截图8 滚动到底部：加载更多按钮与懒构建说明](evidence/08_list_bottom.jpg)
 
-![截图9 关于页：四条命名路由表](evidence/09_about.png)
+![截图9 关于页：四条命名路由表](evidence/09_about.jpg)
 
-![截图10 点击加载更多后：已加载 40/60](evidence/10_list_loadmore_40.png)
+![截图10 点击加载更多后：已加载 40/60](evidence/10_list_loadmore_40.jpg)
 
 命令行证据（dart analyze 与 flutter test）：
 
